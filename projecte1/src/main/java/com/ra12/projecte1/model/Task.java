@@ -4,17 +4,20 @@ import java.sql.Timestamp;
 
 public class Task {
     private long id;
-    private String name, category;
+    private String title, category, imagePath;
+    private boolean completed;
     private Timestamp dataCreated, dataUpdated;
 
-    public Task(){
+    public Task() {
 
     }
 
-    public Task(long id, String name, String category, Timestamp dataCreated, Timestamp dataUpdated) {
+    public Task(long id, String title, String category, String imagePath, boolean completed, Timestamp dataCreated, Timestamp dataUpdated) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.category = category;
+        this.imagePath = imagePath;
+        this.completed = completed;
         this.dataCreated = dataCreated;
         this.dataUpdated = dataUpdated;
     }
@@ -27,12 +30,12 @@ public class Task {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getCategory() {
@@ -41,6 +44,22 @@ public class Task {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 
     public Timestamp getDataCreated() {
@@ -63,10 +82,14 @@ public class Task {
     public String toString() {
         return "Task{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
                 ", category='" + category + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", completed=" + completed +
                 ", dataCreated=" + dataCreated +
                 ", dataUpdated=" + dataUpdated +
                 '}';
     }
 }
+
+
