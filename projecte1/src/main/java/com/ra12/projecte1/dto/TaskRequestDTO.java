@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class TaskRequestDTO {
     private String title, category, imagePath;
-    private boolean completed;
+    private Boolean completed;
 
     public TaskRequestDTO() {
     }

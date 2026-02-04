@@ -3,7 +3,7 @@ package com.ra12.projecte1.model;
 import java.sql.Timestamp;
 
 public class Task {
-    private long id;
+    private Long id;
     private String title, category, imagePath;
     private boolean completed;
     private Timestamp dataCreated, dataUpdated;
@@ -12,7 +12,7 @@ public class Task {
 
     }
 
-    public Task(long id, String title, String category, String imagePath, boolean completed, Timestamp dataCreated, Timestamp dataUpdated) {
+    public Task(Long id, String title, String category, String imagePath, boolean completed, Timestamp dataCreated, Timestamp dataUpdated) {
         this.id = id;
         this.title = title;
         this.category = category;
@@ -22,7 +22,7 @@ public class Task {
         this.dataUpdated = dataUpdated;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
