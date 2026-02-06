@@ -4,6 +4,7 @@ import com.ra12.projecte1.dto.TaskRequestDTO;
 import com.ra12.projecte1.logging.CustomLogging;
 import com.ra12.projecte1.model.Task;
 import com.ra12.projecte1.repository.TaskRepository;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,22 +25,54 @@ public class TaskService {
     @Autowired
     private CustomLogging customLogging;
 
-    public ResponseEntity<String> createTasks(List<Task> tasks) {
-        customLogging.logInfo("TaskService", "createTasks",
-                "Creant els customers");
-        try {
-            for (Task task : tasks) {
-                taskRepository.insertTask(task);
+        public ResponseEntity<String> createTasks(List<Task> tasks) {
+            customLogging.logInfo("TaskService", "createTasks",
+                    "Creant els customers");
+            if (tasks == null || tasks.isEmpty()){
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("La llista de tasques esta buida");
             }
-            // Controlar si las tascas son null
-            return ResponseEntity.status(HttpStatus.CREATED).body("Tasca/Tasques creades correctament");
-        } catch (Exception e) {
-            customLogging.logError("TaskService", "createTasks",
-                    "Error creant els customers", e);
-            throw e;
-        }
 
-    }
+            try {
+                for (Task task : tasks) {
+
+                    if (task == null) {
+                        customLogging.logError("TaskService", "createTasks",
+                                "Existeix una task null dins la llista", null);
+
+                        return ResponseEntity
+                                .status(HttpStatus.BAD_REQUEST)
+                                .body("Existeix una task null dins la llista");
+                    }
+
+                    if (task.getTitle() == null || task.getTitle().isEmpty()) {
+                        customLogging.logError("TaskService", "createTasks",
+                                "Error validació: El títol és obligatori", null);
+
+                        return ResponseEntity
+                                .status(HttpStatus.BAD_REQUEST)
+                                .body("El títol és obligatori");
+                    }
+
+                    if (task.getCategory() == null || task.getCategory().isEmpty()) {
+                        customLogging.logError("TaskService", "createTasks",
+                                "Error validació: La categoria és obligatoria", null);
+
+                        return ResponseEntity
+                                .status(HttpStatus.BAD_REQUEST)
+                                .body("La categoria és obligatoria");
+                    }
+
+                    taskRepository.insertTask(task);
+                }
+                // Controlar si las tascas son null
+                return ResponseEntity.status(HttpStatus.CREATED).body("Tasca/Tasques creades correctament");
+            } catch (Exception e) {
+                customLogging.logError("TaskService", "createTasks",
+                        "Error creant els customers", e);
+                throw e;
+            }
+
+        }
 
     public ResponseEntity<List<Task>> getAllTasks() {
         customLogging.logInfo("TaskService", "getAllTasks",

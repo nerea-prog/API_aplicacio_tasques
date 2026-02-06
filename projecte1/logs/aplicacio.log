@@ -1,23 +1,9 @@
-[INFO] 2026-02-05 23:35.47 - Class: TaskService - Method: createTasks - Message: Creant els customers
-[INFO] 2026-02-05 23:35.47 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
-[INFO] 2026-02-05 23:36.06 - Class: TaskService - Method: createTasks - Message: Creant els customers
-[INFO] 2026-02-05 23:36.06 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
-[INFO] 2026-02-05 23:37.44 - Class: TaskService - Method: getAllTasks - Message: obtenint tots els customers
-[INFO] 2026-02-05 23:37.44 - Class: TaskRepository - Method: getAllTasks - Message: Executant consulta: SELECT * FROM tasks
-[INFO] 2026-02-05 23:38.06 - Class: TaskService - Method: getAllTasks - Message: obtenint tots els customers
-[INFO] 2026-02-05 23:38.06 - Class: TaskRepository - Method: getAllTasks - Message: Executant consulta: SELECT * FROM tasks
-[INFO] 2026-02-05 23:38.39 - Class: TaskService - Method: getAllTasks - Message: obtenint tots els customers
-[INFO] 2026-02-05 23:38.39 - Class: TaskRepository - Method: getAllTasks - Message: Executant consulta: SELECT * FROM tasks
-[INFO] 2026-02-05 23:39.06 - Class: TaskService - Method: getTaskById - Message: obtenint el customer per id
-[INFO] 2026-02-05 23:39.06 - Class: TaskRepository - Method: getTaskById - Message: Executant consulta: select * from tasks where id = ?
-[INFO] 2026-02-05 23:39.10 - Class: TaskService - Method: getTaskById - Message: obtenint el customer per id
-[INFO] 2026-02-05 23:39.10 - Class: TaskRepository - Method: getTaskById - Message: Executant consulta: select * from tasks where id = ?
-[ERROR] 2026-02-05 23:39.10 - Class: TaskService - Method: getAllTasks - Message: Error obtenint tots els customers - Exception: Tasca no trobada
-[INFO] 2026-02-05 23:40.13 - Class: TaskService - Method: uploadCSV - Message: afegint tasques per csv
-[INFO] 2026-02-05 23:40.13 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
-[INFO] 2026-02-05 23:40.13 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
-[INFO] 2026-02-05 23:40.13 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
-[INFO] 2026-02-05 23:40.13 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
-[INFO] 2026-02-05 23:40.13 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
-[INFO] 2026-02-05 23:40.22 - Class: TaskService - Method: uploadCSV - Message: afegint tasques per csv
-[ERROR] 2026-02-05 23:40.22 - Class: TaskService - Method: uploadCSV - Message: Error accedint al fitxer  - Exception: src\main\resources\private\task_processed
+
+[INFO] 2026-02-06 16:00.29 - Class: TaskService - Method: createTasks - Message: Creant els customers
+[ERROR] 2026-02-06 16:00.29 - Class: TaskService - Method: createTasks - Message: Existeix una task null dins la llista
+[INFO] 2026-02-06 16:01.00 - Class: TaskService - Method: createTasks - Message: Creant els customers
+[ERROR] 2026-02-06 16:01.00 - Class: TaskService - Method: createTasks - Message: Error validació: El títol és obligatori
+[INFO] 2026-02-06 16:01.15 - Class: TaskService - Method: createTasks - Message: Creant els customers
+[ERROR] 2026-02-06 16:01.15 - Class: TaskService - Method: createTasks - Message: Error validació: La categoria és obligatoria
+[INFO] 2026-02-06 16:01.33 - Class: TaskService - Method: createTasks - Message: Creant els customers
+[INFO] 2026-02-06 16:01.33 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
