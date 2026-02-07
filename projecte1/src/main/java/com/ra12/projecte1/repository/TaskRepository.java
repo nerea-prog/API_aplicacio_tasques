@@ -64,4 +64,41 @@ public class TaskRepository {
         }
     }
 
+    // Funció per eliminar un task per ID
+    public void deleteTask(Long id) {
+        customLogging.logInfo("TaskRepository", "deleteTask", "Eliminant task amb id: " + id);
+        try {
+            jdbcTemplate.update("DELETE FROM tasks WHERE id = ?", id);
+        } catch (Exception e) {
+            customLogging.logError("TaskRepository", "deleteTask", "Error eliminant task amb id: " + id, e);
+            throw e;
+        }
+    }
+
+    // Funció per eliminar totes les tasks
+    public void deleteAllTasks() {
+        customLogging.logInfo("TaskRepository", "deleteAllTasks", "Eliminant totes les tasks");
+        try {
+            jdbcTemplate.update("DELETE FROM tasks");
+        } catch (Exception e) {
+            customLogging.logError("TaskRepository", "deleteAllTasks", "Error eliminant totes les tasks", e);
+            throw e;
+        }
+    }
+
+    // Funció per actualitzar el camp imagePath d'una task
+    public void updateTaskImage(Long id, String imagePath) {
+        customLogging.logInfo("TaskRepository", "updateTaskImage", "Actualitzant imatge de la task amb id: " + id);
+        try {
+            jdbcTemplate.update(
+                    "UPDATE tasks SET imagePath = ?, dataUpdated = CURRENT_TIMESTAMP WHERE id = ?",
+                    imagePath,
+                    id
+            );
+        } catch (Exception e) {
+            customLogging.logError("TaskRepository", "updateTaskImage", "Error actualitzant imatge de la task amb id: " + id, e);
+            throw e;
+        }
+    }
+
 }
