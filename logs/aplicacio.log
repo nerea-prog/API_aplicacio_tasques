@@ -1,0 +1,14 @@
+[INFO] 2026-02-07 21:33.49 - Class: TaskService - Method: updateTask - Message: Modificant task amb id: 1
+[INFO] 2026-02-07 21:33.49 - Class: TaskRepository - Method: updateTask - Message: Actualitzant task amb id: 1
+[INFO] 2026-02-07 22:00.31 - Class: TaskService - Method: deleteTask - Message: Borrant la task amb id: 1
+[INFO] 2026-02-07 22:00.31 - Class: TaskRepository - Method: deleteTask - Message: Eliminant task amb id: 1
+[INFO] 2026-02-07 22:01.44 - Class: TaskService - Method: deleteAllTasks - Message: Borrant totes les tasks
+[INFO] 2026-02-07 22:01.44 - Class: TaskRepository - Method: deleteAllTasks - Message: Eliminant totes les tasks
+[INFO] 2026-02-07 22:29.17 - Class: TaskService - Method: saveTaskImage - Message: Afegint la imatge chulinSI.jpg per a la task amb id: 1
+[INFO] 2026-02-07 22:29.17 - Class: TaskRepository - Method: updateTaskImage - Message: Actualitzant imatge de la task amb id: 1
+[INFO] 2026-02-07 22:29.17 - Class: TaskService - Method: saveTaskImage - Message: La imatge s'ha guardat correctament. El path és: images/11770499757101chulinSI.jpg
+[INFO] 2026-02-07 22:30.38 - Class: TaskService - Method: saveTaskImage - Message: Afegint la imatge chulinSI.jpg per a la task amb id: 1
+[INFO] 2026-02-07 22:30.38 - Class: TaskRepository - Method: updateTaskImage - Message: Actualitzant imatge de la task amb id: 1
+[INFO] 2026-02-07 22:30.38 - Class: TaskService - Method: saveTaskImage - Message: La imatge s'ha guardat correctament. El path és: images/11770499838744chulinSI.jpg
+[INFO] 2026-02-07 22:47.57 - Class: TaskService - Method: deleteTask - Message: Borrant la task amb id: 88
+[ERROR] 2026-02-07 22:47.57 - Class: TaskService - Method: deleteTask - Message: Error borrant la task amb id: 88 - Exception: La task amb id: 88 no existeix
