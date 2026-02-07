@@ -21,6 +21,7 @@ public class TaskRepository {
     private CustomLogging customLogging;
 
     private static final class TaskRowMapper implements RowMapper<Task> {
+
         @Override
         public Task mapRow(ResultSet rs, int rowNum) throws SQLException {
             Task task = new Task();
@@ -35,6 +36,31 @@ public class TaskRepository {
         }
     }
 
+   public void insertTask(Task task) {
+        customLogging.logInfo("TaskRepository", "insertTask",
+                "Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, " +
+                        "dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)");
+        try {
+            LocalDateTime now = LocalDateTime.now();
+            jdbcTemplate.update(
+                    "INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) " + "VALUES (?, ?, ?, ?, ?, ?)",
+                    task.getTitle(),
+                    task.getCategory(),
+                    task.isCompleted(),
+                    task.getImagePath(),
+                    now,
+                    now
+            );
+
+        } catch (Exception e) {
+            customLogging.logError("TaskRepository", "insertTask",
+                    "Error executant la consulta: INSERT INTO tasks (title, category, completed, " +
+                            "imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)", e);
+            throw e;
+        }
+
+    }
+  
     public void updateTask(Task task) {
         customLogging.logInfo("TaskRepository", "updateTask", "Actualitzant task amb id: " + task.getId());
         try {
@@ -44,6 +70,49 @@ public class TaskRepository {
                     task.getCategory(),
                     task.isCompleted(),
                     task.getImagePath(),
+                    now,
+                    now
+            );
+
+        } catch (Exception e) {
+            customLogging.logError("TaskRepository", "insertTask",
+                    "Error executant la consulta: INSERT INTO tasks (title, category, completed, " +
+                            "imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)", e);
+            throw e;
+        }
+
+    }
+
+    public List<Task> getAllTasks() {
+        customLogging.logInfo("TaskRepository", "getAllTasks",
+                "Executant consulta: SELECT * FROM tasks");
+        try {
+            String sql = "SELECT * FROM tasks";
+            return jdbcTemplate.query(sql, new TaskRowMapper());
+
+        } catch (Exception e) {
+            customLogging.logError("TaskRepository", "getAllTasks",
+                    "Error executant la consulta: SELECT * FROM tasks", e);
+            throw e;
+        }
+    }
+
+
+    public Task getTaskById(long id) {
+        customLogging.logInfo("TaskRepository", "getTaskById",
+                "Executant consulta: select * from tasks where id = ?");
+        try {
+            String sql = "select * from tasks where id = ?";
+            List<Task> task = jdbcTemplate.query(sql, new TaskRowMapper(), id);
+            if (task.isEmpty()) {
+                return null;
+            }
+            return task.get(0);
+
+        } catch (Exception e) {
+            customLogging.logError("TaskRepository", "getTaskById",
+                    "Error executant la consulta: select * from tasks where id = ?", e);
+
                     task.getDataUpdated(),
                     task.getId()
             );

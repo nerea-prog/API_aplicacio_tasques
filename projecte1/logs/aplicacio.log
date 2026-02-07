@@ -1,0 +1,9 @@
+
+[INFO] 2026-02-06 16:00.29 - Class: TaskService - Method: createTasks - Message: Creant els customers
+[ERROR] 2026-02-06 16:00.29 - Class: TaskService - Method: createTasks - Message: Existeix una task null dins la llista
+[INFO] 2026-02-06 16:01.00 - Class: TaskService - Method: createTasks - Message: Creant els customers
+[ERROR] 2026-02-06 16:01.00 - Class: TaskService - Method: createTasks - Message: Error validació: El títol és obligatori
+[INFO] 2026-02-06 16:01.15 - Class: TaskService - Method: createTasks - Message: Creant els customers
+[ERROR] 2026-02-06 16:01.15 - Class: TaskService - Method: createTasks - Message: Error validació: La categoria és obligatoria
+[INFO] 2026-02-06 16:01.33 - Class: TaskService - Method: createTasks - Message: Creant els customers
+[INFO] 2026-02-06 16:01.33 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
