@@ -1,0 +1,2 @@
+[INFO] 2026-02-07 21:33.49 - Class: TaskService - Method: updateTask - Message: Modificant task amb id: 1
+[INFO] 2026-02-07 21:33.49 - Class: TaskRepository - Method: updateTask - Message: Actualitzant task amb id: 1

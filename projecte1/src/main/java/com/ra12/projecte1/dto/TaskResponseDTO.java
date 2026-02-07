@@ -3,9 +3,9 @@ package com.ra12.projecte1.dto;
 import java.sql.Timestamp;
 
 public class TaskResponseDTO {
-    private long id;
+    private Long id;
     private String title, category, imagePath;
-    private boolean completed;
+    private Boolean completed;
     private Timestamp dataCreated, dataUpdated;
 
     public TaskResponseDTO() {
@@ -69,11 +69,11 @@ public class TaskResponseDTO {
         this.title = title;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

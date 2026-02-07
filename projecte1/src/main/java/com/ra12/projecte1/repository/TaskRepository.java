@@ -1,4 +1,67 @@
 package com.ra12.projecte1.repository;
 
+import com.ra12.projecte1.logging.CustomLogging;
+import com.ra12.projecte1.model.Task;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Repository
 public class TaskRepository {
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private CustomLogging customLogging;
+
+    private static final class TaskRowMapper implements RowMapper<Task> {
+        @Override
+        public Task mapRow(ResultSet rs, int rowNum) throws SQLException {
+            Task task = new Task();
+            task.setId(rs.getLong("id"));
+            task.setTitle(rs.getString("title"));
+            task.setCategory(rs.getString("category"));
+            task.setCompleted(rs.getBoolean("completed"));
+            task.setImagePath(rs.getString("imagePath"));
+            task.setDataCreated(rs.getTimestamp("dataCreated"));
+            task.setDataUpdated(rs.getTimestamp("dataUpdated"));
+            return task;
+        }
+    }
+
+    // Funció per obtenir una task per ID
+    public Task findById(Long id) {
+        String sql = "SELECT * FROM tasks WHERE id = ?";
+        List<Task> tasks = jdbcTemplate.query(sql, new TaskRowMapper(), id);
+        if (tasks.isEmpty()) {
+            return null;
+        } else {
+            return tasks.get(0);
+        }
+    }
+
+    public void updateTask(Task task) {
+        customLogging.logInfo("TaskRepository", "updateTask", "Actualitzant task amb id: " + task.getId());
+        try {
+            jdbcTemplate.update(
+                    "UPDATE tasks SET title = ?, category = ?, completed = ?, imagePath = ?, dataUpdated = ? WHERE id = ?",
+                    task.getTitle(),
+                    task.getCategory(),
+                    task.isCompleted(),
+                    task.getImagePath(),
+                    task.getDataUpdated(),
+                    task.getId()
+            );
+        } catch (Exception e) {
+            customLogging.logError("TaskRepository", "updateTask", "Error actualitzant task amb id: " + task.getId(), e);
+            throw e;
+        }
+    }
+
 }
