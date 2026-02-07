@@ -60,7 +60,8 @@ public class TaskRepository {
         }
 
     }
-  
+
+
     public void updateTask(Task task) {
         customLogging.logInfo("TaskRepository", "updateTask", "Actualitzant task amb id: " + task.getId());
         try {
@@ -70,17 +71,13 @@ public class TaskRepository {
                     task.getCategory(),
                     task.isCompleted(),
                     task.getImagePath(),
-                    now,
-                    now
+                    task.getDataUpdated(),
+                    task.getId()
             );
-
         } catch (Exception e) {
-            customLogging.logError("TaskRepository", "insertTask",
-                    "Error executant la consulta: INSERT INTO tasks (title, category, completed, " +
-                            "imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)", e);
+            customLogging.logError("TaskRepository", "updateTask", "Error actualitzant task amb id: " + task.getId(), e);
             throw e;
         }
-
     }
 
     public List<Task> getAllTasks() {
@@ -112,12 +109,6 @@ public class TaskRepository {
         } catch (Exception e) {
             customLogging.logError("TaskRepository", "getTaskById",
                     "Error executant la consulta: select * from tasks where id = ?", e);
-
-                    task.getDataUpdated(),
-                    task.getId()
-            );
-        } catch (Exception e) {
-            customLogging.logError("TaskRepository", "updateTask", "Error actualitzant task amb id: " + task.getId(), e);
             throw e;
         }
     }

@@ -31,11 +31,11 @@ public class TaskController {
     }
 
     @PostMapping("/api/task/csv")
-    public ResponseEntity<String> uploadCSV(@RequestParam MultipartFile tasksFile){
+    public ResponseEntity<String> uploadCSV(@RequestParam MultipartFile tasksFile) {
         return taskService.uploadCSV(tasksFile);
-
+    }
     // UPDATE per ID
-    @PutMapping("/task/{task_id}")
+    @PutMapping("/api/task/{task_id}")
     public ResponseEntity<?> updateTask(
             @PathVariable Long task_id,
             @RequestBody Task taskDetails) {
@@ -43,19 +43,19 @@ public class TaskController {
     }
 
     // DELETE task per ID
-    @DeleteMapping("/task/{task_id}")
+    @DeleteMapping("/api/task/{task_id}")
     public ResponseEntity<String> deleteTask(@PathVariable Long task_id) {
         return taskService.deleteTask(task_id);
     }
 
     // DELETE totes les tasks
-    @DeleteMapping("/tasks")
+    @DeleteMapping("/api/tasks")
     public ResponseEntity<String> deleteAllTasks() {
         return taskService.deleteAllTasks();
     }
 
     // POST per afegir la imatge d'una task
-    @PostMapping("/task/{task_id}/image")
+    @PostMapping("/api/task/{task_id}/image")
     public ResponseEntity<String> uploadTaskImage(
             @PathVariable Long task_id,
             @RequestParam MultipartFile imageFile) {

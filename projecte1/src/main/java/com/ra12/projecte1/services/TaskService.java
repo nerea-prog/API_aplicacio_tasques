@@ -100,7 +100,7 @@ public class TaskService {
         try {
             Task task = taskRepository.getTaskById(id);
             if (task == null) {
-                customLogging.logError("TaskService", "getAllTasks",
+                customLogging.logError("TaskService", "getTaskById",
                         "Error obtenint el customer per id", new RuntimeException("Tasca no trobada"));
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tasca no trobada");
             }
@@ -110,6 +110,7 @@ public class TaskService {
                     "Error obtenint el customer per id", e);
             throw e;
         }
+    }
 
     public ResponseEntity<?> updateTask(Long id, Task taskDetails) {
         customLogging.logInfo("TaskService", "updateTask", "Modificant task amb id: " + id);
