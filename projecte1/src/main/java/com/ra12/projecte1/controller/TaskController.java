@@ -1,6 +1,5 @@
 package com.ra12.projecte1.controller;
 
-
 import com.ra12.projecte1.model.Task;
 import com.ra12.projecte1.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;

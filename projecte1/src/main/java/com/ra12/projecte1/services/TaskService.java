@@ -143,5 +143,4 @@ public class TaskService {
             throw new IllegalArgumentException("La categoria no pot estar buida");
         }
     }
-
 }

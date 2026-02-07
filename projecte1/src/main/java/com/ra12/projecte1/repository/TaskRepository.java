@@ -35,17 +35,6 @@ public class TaskRepository {
         }
     }
 
-    // Funció per obtenir una task per ID
-    public Task findById(Long id) {
-        String sql = "SELECT * FROM tasks WHERE id = ?";
-        List<Task> tasks = jdbcTemplate.query(sql, new TaskRowMapper(), id);
-        if (tasks.isEmpty()) {
-            return null;
-        } else {
-            return tasks.get(0);
-        }
-    }
-
     public void updateTask(Task task) {
         customLogging.logInfo("TaskRepository", "updateTask", "Actualitzant task amb id: " + task.getId());
         try {
