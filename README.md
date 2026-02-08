@@ -4,7 +4,7 @@ Aquest projecte és una API REST desenvolupada amb **Spring Boot** que gestiona 
 
 ## Enllaç al vídeo demostratiu
 
-[Veure vídeo demostratiu de l'execució del .jar i funcionalitats](AQUI_POSA_L_ENLLAÇ_DEL_VIDEO)
+[TASKBUDDY.mp4](video/TASKBUDDY.mp4)
 
 > El vídeo ha de mostrar l'execució del fitxer `.jar` i la prova de tots els endpoints.
 
