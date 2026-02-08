@@ -7,3 +7,6 @@
 [ERROR] 2026-02-06 16:01.15 - Class: TaskService - Method: createTasks - Message: Error validació: La categoria és obligatoria
 [INFO] 2026-02-06 16:01.33 - Class: TaskService - Method: createTasks - Message: Creant els customers
 [INFO] 2026-02-06 16:01.33 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 19:29.14 - Class: TaskService - Method: updateTask - Message: Modificant task amb id: 1
+[INFO] 2026-02-08 19:29.14 - Class: TaskRepository - Method: getTaskById - Message: Executant consulta: select * from tasks where id = ?
+[INFO] 2026-02-08 19:29.14 - Class: TaskRepository - Method: updateTask - Message: Actualitzant task amb id: 1

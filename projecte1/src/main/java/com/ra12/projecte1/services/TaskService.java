@@ -26,6 +26,7 @@ public class TaskService {
     @Autowired
     private CustomLogging customLogging;
 
+        // Crea una llista de tasques
         public ResponseEntity<String> createTasks(List<Task> tasks) {
             customLogging.logInfo("TaskService", "createTasks",
                     "Creant els customers");
@@ -75,6 +76,7 @@ public class TaskService {
 
         }
 
+    // REtorna totes les tasques
     public ResponseEntity<List<Task>> getAllTasks() {
         customLogging.logInfo("TaskService", "getAllTasks",
                 "obtenint tots els customers");
@@ -94,6 +96,7 @@ public class TaskService {
 
     }
 
+    // REtorna una tasca per ID
     public ResponseEntity<String> getTaskById(long id) {
         customLogging.logInfo("TaskService", "getTaskById",
                 "obtenint el customer per id");
@@ -112,6 +115,7 @@ public class TaskService {
         }
     }
 
+    // Actualitza una tasca per ID
     public ResponseEntity<?> updateTask(Long id, Task taskDetails) {
         customLogging.logInfo("TaskService", "updateTask", "Modificant task amb id: " + id);
 
@@ -178,6 +182,7 @@ public class TaskService {
         }
     }
 
+    // Desa una imatge per a un registre d'una tasca
     public ResponseEntity<String> saveTaskImage(Long taskId, MultipartFile imageFile) {
         customLogging.logInfo("TaskService", "saveTaskImage", "Afegint la imatge " + imageFile.getOriginalFilename() + " per a la task amb id: " + taskId);
         try {
@@ -232,6 +237,7 @@ public class TaskService {
         }
     }
 
+    // Pujar tasques des d'un CSV
     public ResponseEntity<String> uploadCSV(MultipartFile tasksFile) {
         customLogging.logInfo("TaskService", "uploadCSV",
                 "afegint tasques per csv");

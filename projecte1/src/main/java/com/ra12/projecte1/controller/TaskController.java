@@ -15,26 +15,31 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
+    // POST: crea diverses tasques enviades en format JSON
     @PostMapping("/api/task")
     public ResponseEntity<String> createTasks(@RequestBody List<Task> tasks) {
         return taskService.createTasks(tasks);
     }
 
+    // GET: retorna totes les tasques
     @GetMapping("/api/task")
     public ResponseEntity<List<Task>> getAllTask() {
         return taskService.getAllTasks();
     }
 
+    // GET: retorna una tasca específica segons el seu ID
     @GetMapping("/api/task/{id}")
     public ResponseEntity<String> getTaskById(@PathVariable long id){
         return taskService.getTaskById(id);
     }
 
+    // POST: puja un fitxer CSV amb diverses tasques
     @PostMapping("/api/task/csv")
     public ResponseEntity<String> uploadCSV(@RequestParam MultipartFile tasksFile) {
         return taskService.uploadCSV(tasksFile);
     }
-    // UPDATE per ID
+
+    // PUT: actualitza una tasca segons el seu ID
     @PutMapping("/api/task/{task_id}")
     public ResponseEntity<?> updateTask(
             @PathVariable Long task_id,
@@ -42,19 +47,19 @@ public class TaskController {
         return taskService.updateTask(task_id, taskDetails);
     }
 
-    // DELETE task per ID
+    // DELETE: elimina una tasca segons el seu ID
     @DeleteMapping("/api/task/{task_id}")
     public ResponseEntity<String> deleteTask(@PathVariable Long task_id) {
         return taskService.deleteTask(task_id);
     }
 
-    // DELETE totes les tasks
+    // DELETE: elimina totes les tasques
     @DeleteMapping("/api/tasks")
     public ResponseEntity<String> deleteAllTasks() {
         return taskService.deleteAllTasks();
     }
 
-    // POST per afegir la imatge d'una task
+    // POST: puja una imatge per a una tasca concreta
     @PostMapping("/api/task/{task_id}/image")
     public ResponseEntity<String> uploadTaskImage(
             @PathVariable Long task_id,
