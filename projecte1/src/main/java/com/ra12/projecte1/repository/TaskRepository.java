@@ -20,6 +20,7 @@ public class TaskRepository {
     @Autowired
     private CustomLogging customLogging;
 
+    // RowMapper: converteix cada fila de la BD en un objecte Task
     private static final class TaskRowMapper implements RowMapper<Task> {
 
         @Override
@@ -36,6 +37,7 @@ public class TaskRepository {
         }
     }
 
+    // Inserta una tasca a la BD
    public void insertTask(Task task) {
         customLogging.logInfo("TaskRepository", "insertTask",
                 "Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, " +
@@ -61,7 +63,7 @@ public class TaskRepository {
 
     }
 
-
+    // Actualitza una tasca existent
     public void updateTask(Task task) {
         customLogging.logInfo("TaskRepository", "updateTask", "Actualitzant task amb id: " + task.getId());
         try {
@@ -80,6 +82,7 @@ public class TaskRepository {
         }
     }
 
+    // Retorna totes les tasques
     public List<Task> getAllTasks() {
         customLogging.logInfo("TaskRepository", "getAllTasks",
                 "Executant consulta: SELECT * FROM tasks");
@@ -94,7 +97,7 @@ public class TaskRepository {
         }
     }
 
-
+    // Retorna una tasca segons ID
     public Task getTaskById(long id) {
         customLogging.logInfo("TaskRepository", "getTaskById",
                 "Executant consulta: select * from tasks where id = ?");
