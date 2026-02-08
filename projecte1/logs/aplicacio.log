@@ -10,3 +10,30 @@
 [INFO] 2026-02-08 19:29.14 - Class: TaskService - Method: updateTask - Message: Modificant task amb id: 1
 [INFO] 2026-02-08 19:29.14 - Class: TaskRepository - Method: getTaskById - Message: Executant consulta: select * from tasks where id = ?
 [INFO] 2026-02-08 19:29.14 - Class: TaskRepository - Method: updateTask - Message: Actualitzant task amb id: 1
+[INFO] 2026-02-08 21:12.16 - Class: TaskService - Method: createTasks - Message: Creant els customers
+[INFO] 2026-02-08 21:12.16 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 21:12.16 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 21:12.41 - Class: TaskService - Method: getAllTasks - Message: obtenint tots els customers
+[INFO] 2026-02-08 21:12.41 - Class: TaskRepository - Method: getAllTasks - Message: Executant consulta: SELECT * FROM tasks
+[INFO] 2026-02-08 21:12.55 - Class: TaskService - Method: getTaskById - Message: obtenint el customer per id
+[INFO] 2026-02-08 21:12.55 - Class: TaskRepository - Method: getTaskById - Message: Executant consulta: select * from tasks where id = ?
+[INFO] 2026-02-08 21:13.07 - Class: TaskService - Method: uploadCSV - Message: afegint tasques per csv
+[INFO] 2026-02-08 21:13.07 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 21:13.07 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 21:13.07 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 21:13.07 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 21:13.07 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 21:13.07 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 21:13.07 - Class: TaskRepository - Method: insertTask - Message: Executant consulta: INSERT INTO tasks (title, category, completed, imagePath, dataCreated, dataUpdated) VALUES (?, ?, ?, ?, ?, ?)
+[INFO] 2026-02-08 21:13.35 - Class: TaskService - Method: updateTask - Message: Modificant task amb id: 1
+[INFO] 2026-02-08 21:13.35 - Class: TaskRepository - Method: getTaskById - Message: Executant consulta: select * from tasks where id = ?
+[INFO] 2026-02-08 21:13.35 - Class: TaskRepository - Method: updateTask - Message: Actualitzant task amb id: 1
+[INFO] 2026-02-08 21:14.03 - Class: TaskService - Method: saveTaskImage - Message: Afegint la imatge chulinSI.jpg per a la task amb id: 1
+[INFO] 2026-02-08 21:14.03 - Class: TaskRepository - Method: getTaskById - Message: Executant consulta: select * from tasks where id = ?
+[INFO] 2026-02-08 21:14.03 - Class: TaskRepository - Method: updateTaskImage - Message: Actualitzant imatge de la task amb id: 1
+[INFO] 2026-02-08 21:14.03 - Class: TaskService - Method: saveTaskImage - Message: La imatge s'ha guardat correctament. El path és: images/11770581643156chulinSI.jpg
+[INFO] 2026-02-08 21:14.37 - Class: TaskService - Method: deleteTask - Message: Borrant la task amb id: 1
+[INFO] 2026-02-08 21:14.37 - Class: TaskRepository - Method: getTaskById - Message: Executant consulta: select * from tasks where id = ?
+[INFO] 2026-02-08 21:14.37 - Class: TaskRepository - Method: deleteTask - Message: Eliminant task amb id: 1
+[INFO] 2026-02-08 21:14.56 - Class: TaskService - Method: deleteAllTasks - Message: Borrant totes les tasks
+[INFO] 2026-02-08 21:14.56 - Class: TaskRepository - Method: deleteAllTasks - Message: Eliminant totes les tasks

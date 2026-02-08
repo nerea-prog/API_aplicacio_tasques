@@ -15,7 +15,7 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    // POST: crea diverses tasques enviades en format JSON
+    // POST: crea diverses tasques enviada en format JSON
     @PostMapping("/api/task")
     public ResponseEntity<String> createTasks(@RequestBody List<Task> tasks) {
         return taskService.createTasks(tasks);
