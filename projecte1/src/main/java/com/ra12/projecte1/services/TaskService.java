@@ -97,7 +97,7 @@ public class TaskService {
     }
 
     // REtorna una tasca per ID
-    public ResponseEntity<String> getTaskById(long id) {
+    public ResponseEntity<Task> getTaskById(long id) {
         customLogging.logInfo("TaskService", "getTaskById",
                 "obtenint el customer per id");
         try {
@@ -105,9 +105,9 @@ public class TaskService {
             if (task == null) {
                 customLogging.logError("TaskService", "getTaskById",
                         "Error obtenint el customer per id", new RuntimeException("Tasca no trobada"));
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tasca no trobada");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
-            return ResponseEntity.status(HttpStatus.OK).body("Tasca trobada \n\n" + task);
+            return ResponseEntity.status(HttpStatus.OK).body(task);
         } catch (Exception e) {
             customLogging.logError("TaskService", "getTaskById",
                     "Error obtenint el customer per id", e);

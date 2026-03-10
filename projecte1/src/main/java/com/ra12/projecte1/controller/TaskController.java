@@ -29,7 +29,7 @@ public class TaskController {
 
     // GET: retorna una tasca específica segons el seu ID
     @GetMapping("/api/task/{id}")
-    public ResponseEntity<String> getTaskById(@PathVariable long id){
+    public ResponseEntity<Task> getTaskById(@PathVariable long id){
         return taskService.getTaskById(id);
     }
 
